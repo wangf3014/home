@@ -51,6 +51,7 @@
           <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>News</heading>
+		<p>[2025.05] Our paper of Patchification Scaling Laws is accepted by ICML2025. We find that a pixel is worth a token! </p>
 		<p>[2025.02] Our papers of Adventurer and Mamba-Reg are accepted by CVPR 2025! </p>
 		<p>[2024.07] Our SCLIP paper is accepted by ECCV 2024. It's an elegant way to extract dense CLIP features without training! </p>
 		<p>[2023.08] Come to JHU and start my PhD life! </p>
@@ -71,6 +72,44 @@
         </table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+	<tr onmouseout="patch_stop()" onmouseover="patch_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <br></br>
+              <div class="one">
+                <div class="two" id='patch_image'><img style="width:100%" src='images/patch_1.png'></div>
+                <img style="width:100%" src='images/patch_0.png'>
+              </div>
+              <script type="text/javascript">
+                function patch_start() {
+                  document.getElementById('patch_image').style.opacity = "1";
+                }
+
+                function patch_stop() {
+                  document.getElementById('patch_image').style.opacity = "0";
+                }
+                patch_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <papertitle> Scaling Laws in Patchification: An Image Is Worth 50,176 Tokens And More </papertitle>
+              <br>
+              <strong>Feng Wang</strong>,
+              <a href="https://yaodongyu.github.io/"> Yaodong Yu</a>,
+              <a href="https://nephrology.medicine.ufl.edu/profile/shao-wei-1/"> Wei Shao</a>,
+	      <a href="https://yuyinzhou.github.io/">Yuyin Zhou</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+	      <a href="https://cihangxie.github.io/">Cihang Xie</a>
+              <br>
+              <em>ICML 2025 </em>. | <a href="https://arxiv.org/pdf/2502.03738">arXiv</a>
+		    | <a href="https://github.com/wangf3014/Patch_Scaling">code</a>
+              <br>
+              We introduce Patchification Scaling Laws, where we find that the patch size of Vision Transformers
+		    and recurrent models can be scaled down to 1x1 with consistently improved predictive performance.
+		    We challenge the notion that "an image is worth 256 tokens"---actually it is worth 50,176 and even more.
+              <br>
+            </td>
+          </tr>
 
         <tr onmouseout="sclip_stop()" onmouseover="sclip_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
