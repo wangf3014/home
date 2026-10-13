@@ -3,7 +3,7 @@
  
   <title>Homepage</title>
 
-  <meta name="author" content="Jon Barron">
+  <meta name="author" content="Feng Wang">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -21,23 +21,26 @@
                 <name>Feng Wang</name>
               </p>
 		  <p>
-		    I am a second-year PhD student at <a href="http://jhu.edu">Johns Hopkins University</a>, where I am fortunate to be advised by
+		    I am a final-year PhD student at <a href="http://jhu.edu">Johns Hopkins University</a>, where I am fortunate to be advised by
 		    Bloomberg Distinguished Professor <a href="https://cs.jhu.edu/~ayuille/"> Alan L. Yuille</a>.
 		  </p>
               <p>
                 Before that I was an M.S. student at <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>,
 		    where I worked under the guidance of Prof. 
 		    <a href="https://scholar.google.com/citations?user=WU1tm2EAAAAJ&hl=zh-CN&oi=ao">Hairong Lv</a>.
-		    I also spent wonderful time interning at <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a>
+		    I also spent wonderful time interning at <a href="https://research.google/">Google Research</a>,
+		    <a href="https://seed.bytedance.com/">ByteDance Seed</a>, <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a>,
 		    and <a href="https://illinois.edu/">UIUC</a>.
              </p>
              <p>
-		    My current research interest lies at the intersection of computer vision and natural language processing,
-		    in particualr visual architectures and vision-language understanding.
+		    My research focuses on video world models and unified vision-language systems.
+              </p>
+              <p style="color:red">
+		    I am on the job market this year. Please feel free to reach out!
               </p>
               <p style="text-align:center">
 		    <a href="mailto:wangf3014@gmail.com">wangf3014 [at] gmail [dot] com</a> /
-		    <a href="github.com/wangf3014">Github</a> /
+		    <a href="https://github.com/wangf3014">Github</a> /
 		    <a href="https://scholar.google.com/citations?hl=en&user=xShOcrsAAAAJ">Google Scholar</a>
               </p>
             </td>
@@ -51,14 +54,12 @@
           <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>News</heading>
-		<p>[2025.05] Our paper of Patchification Scaling Laws is accepted by ICML2025. We find that a pixel is worth a token! </p>
-		<p>[2025.02] Our papers of Adventurer and Mamba-Reg are accepted by CVPR 2025! </p>
-		<p>[2024.07] Our SCLIP paper is accepted by ECCV 2024. It's an elegant way to extract dense CLIP features without training! </p>
-		<p>[2023.08] Come to JHU and start my PhD life! </p>
-	        <p>[2023.01] One paper accepted by ICLR 2023!</p>
-              <p>[2022.07] Come to MSRA NLC group for internship!</p>
-              <p>[2022.07] One paper accepted by ECCV 2022!</p>
-              <p> ... </p>
+		<p>[2026.09] 4 papers accepted by NeurIPS 2026. An interesting finding: video editing can be done by image editors! </p>
+		<p>[2026.07] RINO is released: unified VLMs (i.e., image editors) can handle nearly all vision tasks by representing all visual information in RGB. Let vision speak the language of RGB! </p>
+		<p>[2025.05] Patchification Scaling Laws is accepted by ICML 2025. We find that a pixel is worth a token! </p>
+		<p>[2025.02] Two papers about linear attention design are accepted by CVPR 2025! </p>
+		<p>[2024.07] SCLIP is accepted by ECCV 2024. It's an elegant way to extract dense CLIP features without training! </p>
+		<p>[2023.08] Come to Johns Hopkins University and start my PhD life! </p>
             </td>
           </tr>
         </table>
@@ -66,12 +67,96 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Publications</heading>
-            </td>
+              <heading>Selected Publications</heading>            </td>
           </tr>
         </table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+	<tr onmouseout="ave_stop()" onmouseover="ave_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <br></br>
+              <div class="one">
+                <div class="two" id='ave_image'><img style="width:100%" src='images/ave_1.png'></div>
+                <img style="width:100%" src='images/ave_0.png'>
+              </div>
+              <script type="text/javascript">
+                function ave_start() {
+                  document.getElementById('ave_image').style.opacity = "1";
+                }
+
+                function ave_stop() {
+                  document.getElementById('ave_image').style.opacity = "0";
+                }
+                ave_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <papertitle> Transforming Image Editors into Video Editors </papertitle>
+              <br>
+              <strong>Feng Wang</strong>,
+              <a href="https://zijieli-jlee.github.io/">Zijie Li</a>,
+              <a href="https://ceyuan.me/">Ceyuan Yang</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+              <a href="https://pengwang.cc/">Peng Wang</a>
+              <br>
+              <em>NeurIPS 2026 </em>. | <a href="https://arxiv.org/pdf/2610.11037">arXiv</a>
+		    | <a href="https://github.com/wangf3014/AVE">code</a>
+              <br>
+              We present Anchor-based Video Editing (AVE), which turns a strong image editor into a video editor
+		    without training an end-to-end video editing model. The image editor first edits a sparse set of keyframes,
+		    and a motion-guided image-to-video diffusion model then propagates the edits across the video
+		    with the edited keyframes as fixed anchors.
+              <br>
+            </td>
+          </tr>
+
+	<tr onmouseout="rino_stop()" onmouseover="rino_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <br></br>
+              <div class="one">
+                <div class="two" id='rino_image'><img style="width:100%" src='images/rino_1.png'></div>
+                <img style="width:100%" src='images/rino_0.png'>
+              </div>
+              <script type="text/javascript">
+                function rino_start() {
+                  document.getElementById('rino_image').style.opacity = "1";
+                }
+
+                function rino_stop() {
+                  document.getElementById('rino_image').style.opacity = "0";
+                }
+                rino_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <papertitle> Let RGB Be the Language of Vision </papertitle>
+              <br>
+              <a href="https://yangtiming.github.io/">Timing Yang</a>,
+              Jinrui Yang,
+              Xinlong Li,
+              Yuhan Wang,
+              Haoran Li,
+              Yanqing Liu,
+              <a href="https://scholar.google.com/citations?user=uitAHvoAAAAJ">Guoyizhe Wei</a>,
+              Jixuan Ying,
+              <a href="https://weichen582.github.io/">Chen Wei</a>,
+              <a href="https://aiem.jhu.edu/">Rama Chellappa</a>,
+              <a href="https://yuyinzhou.github.io/">Yuyin Zhou</a>,
+              <a href="https://cihangxie.github.io/">Cihang Xie</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+              <strong>Feng Wang</strong><sup style="font-family:'Times New Roman',serif;">&dagger;</sup>
+              <br>
+              <em>Work in progress </em>. | <a href="https://arxiv.org/pdf/2607.12450">arXiv</a>
+		    | <a href="https://github.com/yangtiming/RINO">code</a>
+              <br>
+              We propose RINO (RGB In and RGB Out), which represents diverse visual information such as masks, depth maps
+		    and poses as RGB images, and casts general vision tasks as RGB-to-RGB image editing. Built on a generic
+		    image editor without task-specific fine-tuning, RINO handles dense understanding tasks and dense-conditioned
+		    generation in a zero-shot manner.
+              <br>
+            </td>
+          </tr>
 
 	<tr onmouseout="patch_stop()" onmouseover="patch_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
@@ -146,6 +231,46 @@
             </td>
           </tr>
 
+	<tr onmouseout="spiral_stop()" onmouseover="spiral_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <br></br>
+              <div class="one">
+                <div class="two" id='spiral_image'><img style="width:100%" src='images/spiral_1.png'></div>
+                <img style="width:100%" src='images/spiral_0.png'>
+              </div>
+              <script type="text/javascript">
+                function spiral_start() {
+                  document.getElementById('spiral_image').style.opacity = "1";
+                }
+
+                function spiral_stop() {
+                  document.getElementById('spiral_image').style.opacity = "0";
+                }
+                spiral_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <papertitle> Spiral RoPE: Rotate Your Rotary Positional Embeddings in the 2D Plane </papertitle>
+              <br>
+              Haoyu Liu,
+              <a href="https://oliverrensu.github.io/"> Sucheng Ren</a>,
+              Tingyu Zhu,
+              <a href="https://pengwang.cc/">Peng Wang</a>,
+              <a href="https://cihangxie.github.io/">Cihang Xie</a>,
+              <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
+              Zeyu Zheng,
+              <strong>Feng Wang</strong><sup style="font-family:'Times New Roman',serif;">&dagger;</sup>
+              <br>
+              <em>ICML 2026 </em>. | <a href="https://arxiv.org/pdf/2602.03227">arXiv</a>
+              <br>
+              Standard axial 2D RoPE splits positions into horizontal and vertical components, restricting positional encoding
+		    to axis-aligned directions. We propose Spiral RoPE, which assigns channel groups to uniformly distributed directions
+		    and rotates each group by the projection of the patch position onto its direction, bringing consistent gains on
+		    classification, segmentation and generation.
+              <br>
+            </td>
+          </tr>
+
 	<tr onmouseout="adventurer_stop()" onmouseover="adventurer_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <br></br>
@@ -168,20 +293,20 @@
               <papertitle> Causal Image Modeling for Efficient Visual Understanding </papertitle>
               <br>
               <strong>Feng Wang</strong>,
-	      Timing Yang,
+	      <a href="https://yangtiming.github.io/">Timing Yang</a>,
 	      <a href="https://yaodongyu.github.io/"> Yaodong Yu</a>,
 	      <a href="https://oliverrensu.github.io/"> Sucheng Ren</a>,
-	      Guoyizhe Wei,
+	      <a href="https://scholar.google.com/citations?user=uitAHvoAAAAJ">Guoyizhe Wei</a>,
 	      <a href="https://angtianwang.github.io/"> Angtian Wang</a>,
 	      <a href="https://nephrology.medicine.ufl.edu/profile/shao-wei-1/"> Wei Shao</a>,
 	      <a href="https://yuyinzhou.github.io/">Yuyin Zhou</a>,
               <a href="http://cs.jhu.edu/~ayuille/">Alan Yuille</a>,
 	      <a href="https://cihangxie.github.io/">Cihang Xie</a>,
               <br>
-              <em>CVPR 2025 </em>. | <a href="https://github.com/wangf3014/Adventurer">arXiv</a>
+              <em>CVPR 2025 </em>. | <a href="https://arxiv.org/pdf/2410.07599">arXiv</a>
 		    | <a href="https://github.com/wangf3014/Adventurer">code</a>
               <br>
-              we present a comprehensive analysis of causal image modeling and introduce the 
+              We present a comprehensive analysis of causal image modeling and introduce the 
 		    Adventurer series models where we treat images as sequences of patch tokens 
 		    and employ uni-directional language models to learn visual representations.
 		    This modeling paradigm allows us to process images in a recurrent formulation with
@@ -215,7 +340,7 @@
               <strong>Feng Wang</strong>,
               <a href="https://jiahaoplus.github.io/"> Jiahao Wang</a>,
 	      <a href="https://oliverrensu.github.io/"> Sucheng Ren</a>,
-	      Guoyizhe Wei,
+	      <a href="https://scholar.google.com/citations?user=uitAHvoAAAAJ">Guoyizhe Wei</a>,
 	      <a href="https://meijieru.com/">Jieru Mei</a>,
 	      <a href="https://nephrology.medicine.ufl.edu/profile/shao-wei-1/"> Wei Shao</a>,
 	      <a href="https://yuyinzhou.github.io/">Yuyin Zhou</a>,
@@ -328,7 +453,7 @@
               <papertitle> Boost Neural Networks by Checkpoints </papertitle>
               <br>
               <strong>Feng Wang</strong>,
-              Guoyizhe Wei,
+              <a href="https://scholar.google.com/citations?user=uitAHvoAAAAJ">Guoyizhe Wei</a>,
               <a href="http://liuqiao.me/">Qiao Liu</a>,
               Jinxiang Ou,
               <a href="https://scholar.google.com/citations?user=TaEM1KcAAAAJ&hl=zh-CN&oi=ao">Xian Wei</a>,
@@ -351,7 +476,7 @@
             <td style="padding:0px">
               <br>
               <p style="text-align:right;font-size:small;">
-                  Last update: May. 2025 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
+                  Last update: Oct. 2026 &nbsp&nbsp&nbsp&nbsp <a href="https://jonbarron.info/">Template</a>
               </p>
             </td>
           </tr>
